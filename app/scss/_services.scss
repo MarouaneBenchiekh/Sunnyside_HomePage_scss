@@ -1,0 +1,81 @@
+.services {
+  &__row {
+    @include breakpoints-up(large) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      //grid-template: ;
+    }
+  }
+  &__image {
+    &__first {
+      background-image: url("/images/mobile/image-transform.jpg");
+    }
+    &__second {
+      background-image: url("/images/mobile/image-stand-out.jpg");
+    }
+    &__first,
+    &__second {
+      width: 100%;
+      height: 21.75rem;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      @include breakpoints-up(large) {
+        height: 29.75rem;
+      }
+    }
+  }
+
+  &__service {
+    text-align: center;
+    margin: 3.75rem 1rem;
+    @include breakpoints-up(large) {
+      text-align: left;
+      margin: 8rem 4rem;
+    }
+
+    h1 {
+      font-family: "Fraunces", sans-serif;
+      font-size: 2.06rem;
+      font-weight: 900;
+    }
+
+    p {
+      font-family: "Brauce", sans-serif;
+      font-weight: 600;
+      line-height: 1.5;
+      color: $darkGrayishBlue;
+    }
+  }
+}
+
+.link {
+  position: relative;
+  font-family: "Fraunces", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 300ms ease-in-out;
+  &:hover {
+    font-size: 1.05rem;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.5;
+  }
+  &.first {
+    &::after {
+      background-color: $softRed;
+    }
+  }
+  &.second {
+    &::after {
+      background-color: $yellow;
+    }
+  }
+}
